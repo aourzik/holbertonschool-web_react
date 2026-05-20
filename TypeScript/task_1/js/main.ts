@@ -15,6 +15,15 @@ interface Directors extends Teacher {
     numberOfReports: number;
 }
 
+//interface créée à la task 3 pour la fonction printTeacher
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+    return `${firstName.charAt(0)}. ${lastName}`;
+};
+
 const director1: Directors = {
     firstName: 'John',
     lastName: 'Doe',
@@ -33,5 +42,6 @@ const teacher3: Teacher = {
 
 console.log(director1);
 console.log(teacher3);
+console.log(printTeacher('John', 'Doe'));
 
-export { };
+export { Teacher, Directors, printTeacherFunction, printTeacher, director1, teacher3 };
