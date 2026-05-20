@@ -46,6 +46,19 @@ function createEmployee(salary: number | string): Director | Teacher {
     return new Director();
 }
 
+function isDirector(employee: Director | Teacher): employee is Director {
+    return (employee as Director).workDirectorTasks !== undefined;
+}
+
+// Fonction task 6
+function executeWork(employee: Director | Teacher): void {
+    if (isDirector(employee)) {
+        console.log(employee.workDirectorTasks());
+    } else {
+        console.log(employee.workTeacherTasks());
+    }
+}
+
 // ==========================================
 // TESTS
 // ==========================================
@@ -53,11 +66,16 @@ console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
 
+executeWork(createEmployee(200));
+executeWork(createEmployee(1000));
+
 // Exports
 export {
     DirectorInterface,
     TeacherInterface,
     Director,
     Teacher,
-    createEmployee
+    createEmployee,
+    isDirector,
+    executeWork
 };
