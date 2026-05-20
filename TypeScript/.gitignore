@@ -1,0 +1,12 @@
+# Dépendances Node / Libs
+node_modules/
+.pnpm-store/
+
+# Fichiers de build (générés par Webpack)
+dist/
+
+# Logs d'erreurs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
